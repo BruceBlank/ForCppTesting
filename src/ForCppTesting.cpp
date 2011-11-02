@@ -18,12 +18,24 @@ void output(const std::string &s) {
 }
 
 int main() {
-	std::vector<std::string> v;
-	v.push_back("Eins");
-	v.push_back("Zwei");
-	v.push_back("Drei");
+	// old style c++ to define and print a vector
+	std::vector<std::string> v1;
+	v1.push_back("Eins");
+	v1.push_back("Zwei");
+	v1.push_back("Drei");
+	v1.push_back("Vier");
+	v1.push_back("Fuenf");
 
-	for_each(v.begin(), v.end(), output);
+	for_each(v1.begin(), v1.end(), output);
 	cout << endl;
+
+	// c++11 style to define a vector
+	std::vector<std::string> v2 = {"Eins", "Zwei", "Drei", "Vier", "Fuenf"};
+	// one c++11 style to print a vector
+	for(std::string &str : v2){
+		cout << " " << str;
+	}
+	// TODO: another c++11 style to print a vector
+
 	return 0;
 }
