@@ -19,6 +19,7 @@ void output(const std::string &s) {
 
 int main() {
 	// old style c++ to define and print a vector
+	cout << "old style: ";
 	std::vector<std::string> v1;
 	v1.push_back("Eins");
 	v1.push_back("Zwei");
@@ -32,10 +33,22 @@ int main() {
 	// c++11 style to define a vector
 	std::vector<std::string> v2 = {"Eins", "Zwei", "Drei", "Vier", "Fuenf"};
 	// one c++11 style to print a vector
+	cout << "new style 1: ";
 	for(std::string &str : v2){
 		cout << " " << str;
 	}
-	// TODO: another c++11 style to print a vector
+	cout << endl;
+
+	// another c++11 style to print a vector
+	cout << "new style 2: ";
+	for(auto iter = v2.begin(); iter != v2.end(); ++iter){
+		cout << " " << *iter;
+	}
+	cout << endl;
+
+	// another c++11 style to print a vector
+	cout << "new style 3: ";
+	for_each(v2.begin(), v2.end(), [](const std::string s){cout << " " << s;});
 
 	return 0;
 }
