@@ -33,21 +33,21 @@ void define_and_print_a_vector() {
 	// c++11 style to define a vector
 	std::vector<std::string> v2 = {"Eins", "Zwei", "Drei", "Vier", "Fuenf"};
 	// one c++11 style to print a vector
-	cout << "new style 1: ";
+	cout << "new style 1 (using direct element access within for-statement): ";
 	for(std::string &str : v2){
 		cout << " " << str;
 	}
 	cout << endl;
 
 	// another c++11 style to print a vector
-	cout << "new style 2: ";
+	cout << "new style 2 (using new 'auto' keyword): ";
 	for(auto iter = v2.begin(); iter != v2.end(); ++iter){
 		cout << " " << *iter;
 	}
 	cout << endl;
 
 	// another c++11 style to print a vector
-	cout << "new style 3: ";
+	cout << "new style 3: (using a lambda-function)";
 	for_each(v2.begin(), v2.end(), [](const std::string s){cout << " " << s;});
 }
 
